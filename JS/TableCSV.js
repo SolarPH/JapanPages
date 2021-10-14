@@ -4,6 +4,13 @@ export default class {
 	 */
 	constructor(root) {
 		this.root = root;
-		console.log("I am constructed!");
+	}
+	
+	setHeader(headerColumns){
+		this.root.insertAdjacentHTML("afterbegin", `
+			<thead>
+				${ headerColumns.map(text => `<th>${text}</th>`).join("") }
+			</thead>
+		`)
 	}
 }
