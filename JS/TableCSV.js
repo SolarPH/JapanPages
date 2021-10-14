@@ -6,6 +6,12 @@ export default class {
 		this.root = root;
 	}
 	
+	update(data, headerColumns = []) {
+		this.clear();
+		this.setHeader(headerColumns);
+		this.setBody(data);
+	}
+	
 	setHeader(headerColumns){
 		this.root.insertAdjacentHTML("afterbegin", `
 			<thead>
